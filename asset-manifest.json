@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/strideind/static/css/main.90fb87fb.css",
+    "main.js": "/strideind/static/js/main.924f69fe.js",
+    "index.html": "/strideind/index.html",
+    "main.90fb87fb.css.map": "/strideind/static/css/main.90fb87fb.css.map",
+    "main.924f69fe.js.map": "/strideind/static/js/main.924f69fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90fb87fb.css",
+    "static/js/main.924f69fe.js"
+  ]
+}
