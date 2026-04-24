@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --teal: #1a9fa0;
+  --teal-light: #22b8b9;
+  --teal-dark: #147a7b;
+  --teal-dim: rgba(26, 159, 160, 0.12);
+  --teal-glow: rgba(26, 159, 160, 0.25);
+  --black: #0a0a0a;
+  --dark: #111111;
+  --dark2: #161616;
+  --dark3: #1e1e1e;
+  --white: #ffffff;
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-10: rgba(255, 255, 255, 0.08);
+  --font: 'Manrope', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--black);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--teal-dark); border-radius: 2px; }
+
+/* Selection */
+::selection { background: var(--teal); color: var(--black); }
