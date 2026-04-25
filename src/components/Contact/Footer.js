@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/logo.png" alt="Strideind" className="footer-logo" />
+            <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Strideind" className="footer-logo" />
             <p className="footer-tagline">
               Engineering excellence for the industries that move the world forward.
             </p>

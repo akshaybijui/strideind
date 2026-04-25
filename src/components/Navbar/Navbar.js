@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
         <a href="#home" className="nav-logo">
-          <img src="/logo.png" alt="Strideind" />
+          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Strideind" />
         </a>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>

@@ -13,13 +13,14 @@
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .footer-logo {
-  height: 28px;
-  width: auto;
+  min-width: auto;
   filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(155deg) brightness(0.85);
+  margin: 0%;
+
 }
 
 .footer-tagline {

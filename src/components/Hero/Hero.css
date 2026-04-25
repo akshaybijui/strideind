@@ -31,7 +31,7 @@
   position: relative;
   z-index: 2;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 5%;
   padding: 0 40px;
   width: 50%;
 }
@@ -115,14 +115,16 @@
 }
 
 .btn-ghost {
-  color: var(--white-80);
+  background: #ffffff;
+  color: #000000;
+  padding: 12px 24px;
+  border-radius: 4px; /* rectangle (not pill) */
   text-decoration: none;
   font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  padding: 14px 4px;
-  border-bottom: 1px solid var(--white-20);
-  transition: color 0.2s, border-color 0.2s;
+  font-weight: 500;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  transition: all 0.25s ease;
 }
 
 .btn-ghost:hover {

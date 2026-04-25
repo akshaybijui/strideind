@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './components/shared.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
 
-
-import Products from './components/Products';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import StrideAI from './components/StrideAI';
+import Products from './components/Products/Products';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import StrideAI from './components/StrideAI/StrideAI';
 
 export default function App() {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   return (
     <>
       <Navbar />
       <Hero />
       <About />
-      
-      
-      <Products />
+
+      {/* PRODUCTS */}
+      <Products 
+        onSelectProduct={setSelectedProduct} 
+        onViewAll={() => setSelectedProduct(null)} 
+      />
+
+      {/* CONDITIONAL RENDER */}
+      {selectedProduct && (
+        <ProductDetail product={selectedProduct} />
+      )}
+
       <Contact />
       <Footer />
       <StrideAI />

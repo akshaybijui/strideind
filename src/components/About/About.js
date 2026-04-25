@@ -35,7 +35,7 @@ export default function About() {
             <div className="about-img-wrap">
               {/* Replace with real image */}
               <img
-                src="/oil.png"
+                 src={process.env.PUBLIC_URL + "/oil.png"}
                 alt="Industrial facility"
               />
               <div className="about-img-badge">

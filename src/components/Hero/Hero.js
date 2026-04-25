@@ -26,7 +26,7 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#services" className="btn-primary">Explore Services</a>
+          <a href="#products" className="btn-primary">Explore Products</a>
           <a href="#contact" className="btn-ghost">Talk to Us →</a>
         </div>
 
@@ -48,17 +48,15 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-image">
-        {/* Replace with real image */}
-        <div className="hero-img-placeholder">
-          <img
-            src="bgim.png"
-            alt="Industrial operations"
-          />
-          <div className="img-overlay" />
-        </div>
-      </div>
-
+<div className="hero-image">
+  <div className="hero-img-placeholder">
+    <img
+      src={process.env.PUBLIC_URL + "/bgim.png"}
+      alt="Industrial operations"
+    />
+    <div className="img-overlay" />
+  </div>
+</div>
       <div className="hero-scroll">
         <div className="scroll-line" />
         <span>Scroll</span>
