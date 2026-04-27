@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './Products.css';
-
+import { useNavigate } from "react-router-dom";
 const products = [
   {
     tag: 'Automotive',
@@ -49,15 +49,13 @@ const products = [
 export default function Products({ onSelectProduct, onViewAll }) {
   const scrollRef = useRef(null);
 
-  // ✅ STABLE WHEEL SCROLL (no page movement)
   useEffect(() => {
     const el = scrollRef.current;
-
     if (!el) return;
 
     const wheelHandler = (e) => {
-      e.preventDefault(); // 🚫 stop vertical page scroll completely
-      el.scrollLeft += e.deltaY; // 👉 convert vertical scroll to horizontal
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
     };
 
     el.addEventListener('wheel', wheelHandler, { passive: false });
@@ -77,10 +75,11 @@ export default function Products({ onSelectProduct, onViewAll }) {
             Products That <br />
             <span className="teal">Deliver</span>
           </h2>
-
-          <button className="btn-outline" onClick={onViewAll}>
-            View All →
-          </button>
+          <div>
+          <button className="btn-outline">
+  View All <span className="arrow">→</span>
+</button>
+        </div>
         </div>
 
         <div className="prod-scroll">
@@ -102,10 +101,11 @@ export default function Products({ onSelectProduct, onViewAll }) {
                 <div className="prod-body">
                   <h3 className="prod-title">{p.title}</h3>
                   <p className="prod-desc">{p.desc}</p>
-
-                  <div className="prod-link">
-                    View Product →
-                  </div>
+                  <div>
+                  <button className="btn-outline">
+  View Products <span className="arrow">→</span>
+</button>
+</div>
                 </div>
               </div>
             ))}

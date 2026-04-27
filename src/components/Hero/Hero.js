@@ -51,7 +51,7 @@ export default function Hero() {
 <div className="hero-image">
   <div className="hero-img-placeholder">
     <img
-      src={process.env.PUBLIC_URL + "/bgim.png"}
+      src={process.env.PUBLIC_URL + "/bg7.png"}
       alt="Industrial operations"
     />
     <div className="img-overlay" />
@@ -59,7 +59,7 @@ export default function Hero() {
 </div>
       <div className="hero-scroll">
         <div className="scroll-line" />
-        <span>Scroll</span>
+       
       </div>
     </section>
   );

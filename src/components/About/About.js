@@ -26,9 +26,9 @@ export default function About() {
               With deep expertise across automation, supply chain and process engineering, our teams bring the technical rigour and commercial mindset to solve complex challenges — and keep solving them as your business evolves.
             </p>
 
-            <a href="#contact" className="btn-primary" style={{ display: 'inline-block', marginTop: '32px', textDecoration: 'none' }}>
-              Work With Us
-            </a>
+            <a href="#contact" className="btn-primary">
+  Work With Us
+</a>
           </div>
 
           <div className="about-right">

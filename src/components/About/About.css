@@ -1,7 +1,17 @@
 .about {
   background: var(--black);
+  padding: 120px 0;
 }
 
+/* ✅ ALIGN WITH HERO */
+.about .container {
+  margin-left: 5%;
+  margin-right: 0;
+  max-width: none;
+  padding-right: 20px;
+}
+
+/* Layout */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10,9 +20,9 @@
   margin-bottom: 80px;
 }
 
+/* Left */
 .about-left {
-  display: flex;
-  flex-direction: column;
+  max-width: 600px;
 }
 
 .about-text {
@@ -23,10 +33,12 @@
   margin-bottom: 16px;
 }
 
+/* Right */
 .about-right {
   position: relative;
 }
 
+/* Image */
 .about-img-wrap {
   position: relative;
   border-radius: 2px;
@@ -41,6 +53,7 @@
   display: block;
 }
 
+/* Badge */
 .about-img-badge {
   position: absolute;
   bottom: -20px;
@@ -72,15 +85,6 @@
 }
 
 /* Pillars */
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.06);
-  margin-top: 32px;
-}
-
 .pillar {
   background: var(--black);
   padding: 36px 32px;
@@ -88,14 +92,33 @@
   flex-direction: column;
   gap: 10px;
   border-top: 2px solid transparent;
-  transition: border-color 0.3s, background 0.3s;
+  cursor: pointer;
+
+  /* ✅ smoother animation */
+  transition: 
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
 
+/* ✅ SMOOTH HOVER (lift + scale + depth) */
 .pillar:hover {
   border-color: var(--teal);
   background: var(--dark);
+
+  transform: translateY(-10px) scale(1.02);
+
+  box-shadow: 
+    0 10px 20px rgba(0,0,0,0.25),
+    0 20px 40px rgba(0,0,0,0.35);
 }
 
+/* ✅ CLICK FEEL (soft press) */
+.pillar:active {
+  transform: translateY(-4px) scale(0.99);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
 .pillar-num {
   font-size: 12px;
   font-weight: 700;
@@ -116,12 +139,39 @@
   line-height: 1.7;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-left {
+    max-width: 500px;
+  }
+}
+
 @media (max-width: 900px) {
+  .about .container {
+    margin: 0;
+    padding: 0 20px;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
     gap: 48px;
   }
 
-  .about-img-wrap img { height: 340px; }
-  .pillars { grid-template-columns: 1fr; }
+  .about-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-img-wrap img {
+    height: 340px;
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
 }

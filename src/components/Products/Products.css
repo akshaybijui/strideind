@@ -1,172 +1,249 @@
 .products {
   background: var(--black);
+  padding: 120px 0;
   position: relative;
 }
 
-/* HEADER */
+/* ✅ ALIGN WITH HERO */
+.products .container {
+  margin-left: 5%;
+  margin-right: 0;
+  max-width: none;
+  padding-right: 20px;
+}
+
+/* Section label */
+.section-label {
+  color: var(--teal);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Header */
 .prod-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 56px;
+  margin-bottom: 48px;
+  max-width: 100%; /* ✅ allow full width */
 }
 
-/* SCROLL WRAPPER */
+/* Title */
+.section-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.section-title .teal {
+  color: var(--teal);
+}
+
+/* Button */
+.btn-outline {
+  border: 1px solid var(--white-20);
+  color: var(--white);
+  padding: 10px 18px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+/* move arrow on hover */
+.btn-outline:hover .arrow {
+  transform: translateX(4px);
+}
+/* Scroll wrapper */
 .prod-scroll {
   position: relative;
+  overflow: hidden;
 }
 
-/* GRID (HORIZONTAL) */
+/* ✅ LEFT FADE */
+.prod-scroll::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    var(--black),
+    rgba(10, 10, 10, 0.6),
+    transparent
+  );
+}
+
+/* ✅ RIGHT FADE */
+.prod-scroll::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    to left,
+    var(--black),
+    rgba(10, 10, 10, 0.6),
+    transparent
+  );
+}
+
+/* Grid (horizontal scroll) */
 .prod-grid {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   overflow-x: auto;
-  overflow-y: hidden; /* 🔥 prevents vertical scroll inside */
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
 }
 
-/* Hide scrollbar (optional clean look) */
+/* Hide scrollbar */
 .prod-grid::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
-.prod-grid::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.2);
-  border-radius: 10px;
+.prod-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* CARD */
+/* Card */
 .prod-card {
-  min-width: 320px;
-  max-width: 320px;
-  transition: 0.3s ease;
-  flex-shrink: 0;
+  min-width: 300px;
+  max-width: 300px;
+  background: var(--dark2);
+  border: 1px solid var(--white-10);
+  transition: transform 0.25s ease, border 0.25s ease;
 }
 
 .prod-card:hover {
-  background: var(--dark);
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transform: translateY(-6px);
+  border-color: var(--teal);
 }
 
-/* IMAGE */
+/* Image */
 .prod-img-wrap {
   position: relative;
+  height: 200px;
   overflow: hidden;
-  height: 220px;
 }
 
 .prod-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.6) grayscale(25%);
-  transition: transform 0.5s ease, filter 0.4s;
-}
-
-.prod-card:hover .prod-img-wrap img {
-  transform: scale(1.06);
-  filter: brightness(0.7) grayscale(10%);
 }
 
 .prod-img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
 
-/* TAG + STAT */
+/* Tag + stat */
 .prod-tag {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--black);
+  top: 12px;
+  left: 12px;
   background: var(--teal);
-  padding: 4px 10px;
+  color: #000;
+  font-size: 10px;
+  padding: 4px 8px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .prod-stat {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--teal-light);
+  bottom: 12px;
+  right: 12px;
   background: rgba(0,0,0,0.7);
-  padding: 6px 12px;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 8px;
 }
 
-/* BODY */
+/* Body */
 .prod-body {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 20px;
 }
 
 .prod-title {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--white);
+  margin-bottom: 10px;
 }
 
 .prod-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--white-50);
   line-height: 1.6;
+  margin-bottom: 16px;
 }
 
 .prod-link {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
   color: var(--teal);
-  margin-top: 8px;
+  font-weight: 600;
 }
 
-.prod-card:hover .prod-link {
-  color: var(--teal-light);
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 1024px) {
+  .prod-header {
+    max-width: 100%;
+  }
 }
 
-/* SCROLL BUTTONS */
-.scroll-btn {
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  border: none;
-  color: white;
-  font-size: 22px;
-  padding: 10px 14px;
-  cursor: pointer;
-  z-index: 10;
+@media (max-width: 767px) {
+  .products .container {
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  .prod-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  /* smaller fade on mobile */
+  .prod-scroll::before,
+  .prod-scroll::after {
+    width: 60px;
+  }
 }
 
-.scroll-btn.left {
-  left: -10px;
-}
-
-.scroll-btn.right {
-  right: -10px;
-}
-
-.scroll-btn:hover {
-  background: var(--teal);
-}
-
-/* BUTTON */
-.btn-outline {
-  color: rgb(0, 0, 0);
-  border: 1px solid rgb(255, 255, 255);
-  padding: 10px 18px;
-  text-decoration: none;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .scroll-btn {
-    display: none;
+@media (max-width: 480px) {
+  .prod-card {
+    min-width: 260px;
+    max-width: 260px;
   }
 }
