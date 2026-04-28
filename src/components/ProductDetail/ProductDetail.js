@@ -1,67 +1,75 @@
-// import React from "react";
-// import "./ProductDetail.css";
+import { useParams } from "react-router-dom";
+import "./ProductDetail.css";
 
-// export default function ProductDetail({ product }) {
-//   if (!product) return null;
+export default function ProductDetail() {
+  const { id } = useParams();
 
-//   return (
-//     <section className="product-page">
-      
-//       {/* HERO */}
-//       <div className="product-hero">
-//         <img src={product.img} alt="" />
-//         <div className="overlay" />
+  if (id === "futudrill") {
+    return (
+      <div className="product-detail">
+        <div className="pd-hero">
+          <h1>Futudrill</h1>
+          <p>Intelligent Drilling Instrumentation & Remote Monitoring</p>
+        </div>
 
-//         <div className="hero-content">
-//           <span className="tag">{product.tag}</span>
-//           <h1>{product.title}</h1>
-//           <p>{product.desc}</p>
-//         </div>
-//       </div>
+        <div className="pd-stats">
+          <div>500+ Well Sites</div>
+          <div>99.7% Uptime</div>
+          <div>30% Fuel Savings</div>
+          <div>24/7 Monitoring</div>
+        </div>
 
-//       {/* VIDEO */}
-//       <div className="container video-section">
-//         <h2>Product Overview</h2>
-//         <video controls>
-//           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-//         </video>
-//       </div>
+        <div className="pd-section">
+          <h2>Core Solutions</h2>
 
-//       {/* STATS */}
-//       <div className="container stats">
-//         <div className="stat-box">
-//           <h3>{product.stat}</h3>
-//           <p>Performance Metric</p>
-//         </div>
-//       </div>
+          <div className="pd-grid">
+            <div>
+              <h3>Drilling Instrumentation</h3>
+              <p>
+                Precision sensors for torque, speed, and formation data.
+              </p>
+            </div>
 
-//       {/* FEATURES */}
-//       <div className="container features">
-//         <h2>Key Features</h2>
-//         <ul>
-//           <li>✔ Fully automated system</li>
-//           <li>✔ AI-powered optimization</li>
-//           <li>✔ Real-time monitoring</li>
-//           <li>✔ Scalable infrastructure</li>
-//         </ul>
-//       </div>
+            <div>
+              <h3>Fuel Monitoring</h3>
+              <p>
+                Real-time fuel tracking across rigs and generators.
+              </p>
+            </div>
 
-//       {/* GALLERY (kept same structure but static images) */}
-//       <div className="container gallery">
-//         <h2>Gallery</h2>
-//         <div className="gallery-grid">
-//           <img src={product.img} alt="" />
-//           <img src={product.img} alt="" />
-//           <img src={product.img} alt="" />
-//         </div>
-//       </div>
+            <div>
+              <h3>Remote Monitoring</h3>
+              <p>
+                Monitor drilling operations from anywhere in real-time.
+              </p>
+            </div>
+          </div>
+        </div>
 
-//       {/* CTA */}
-//       <div className="container cta">
-//         <h2>Interested in this product?</h2>
-//         <a href="#contact" className="btn-primary">Contact Us</a>
-//       </div>
+        <div className="pd-section">
+          <h2>Advanced Capabilities</h2>
 
-//     </section>
-//   );
-// }
+          <ul>
+            <li>Custom Branding (White-label)</li>
+            <li>Universal I/O Compatibility</li>
+            <li>SCADA & ERP Integration</li>
+            <li>AI Alerts & Predictive Analytics</li>
+          </ul>
+        </div>
+
+        <div className="pd-section">
+          <h2>Why Futudrill</h2>
+
+          <ul>
+            <li>Field-Proven Reliability</li>
+            <li>Rapid Deployment</li>
+            <li>Enterprise Security (ISO 27001)</li>
+            <li>24/7 Dedicated Support</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+
+  return <div>Product Not Found</div>;
+}

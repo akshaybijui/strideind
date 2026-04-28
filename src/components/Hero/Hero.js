@@ -66,15 +66,12 @@ export default function Hero() {
 
       </div>
 
-      <div className="hero-image">
-        <div className="hero-img-placeholder">
-          <img
-            src={process.env.PUBLIC_URL + "/bg7.png"}
-            alt="Industrial operations"
-          />
-          <div className="img-overlay" />
-        </div>
-      </div>
+      {/* ✅ Full Video Background */}
+<div className="hero-video">
+  <video autoPlay muted loop playsInline>
+    <source src={process.env.PUBLIC_URL + "/sample-3.mp4"} type="video/mp4" />
+  </video>
+</div>
 
       <div className="hero-scroll">
         <div className="scroll-line" />

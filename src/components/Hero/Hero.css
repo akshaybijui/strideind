@@ -175,37 +175,30 @@
   background: var(--white-20);
 }
 
-/* ✅ FIX: stop breaking layout */
-.hero-image {
+/* 🎥 Full video background */
+.hero-video {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 45%;
-}
-
-/* keep image clean */
-.hero-img-placeholder {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
 }
 
-.hero-img-placeholder img {
+.hero-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.img-overlay {
+/* 🌑 Dark overlay for readability */
+.hero-video::after {
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    var(--black) 0%,
-    rgba(10,10,10,0.3) 40%,
-    transparent 100%
+    rgba(10,10,10,0.9) 0%,
+    rgba(10,10,10,0.7) 40%,
+    rgba(10,10,10,0.5) 100%
   );
 }
 

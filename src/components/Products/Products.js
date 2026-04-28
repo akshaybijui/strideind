@@ -1,8 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom"; // ✅ added
 import './Products.css';
 
 const products = [
   {
+    id: "futudrill", // ✅ added
+    tag: '🚀 Futudrill',
+    title: 'Futudrill Smart Drilling Platform',
+    desc: 'Advanced drilling instrumentation and real-time monitoring system.',
+    img: 'https://images.unsplash.com/photo-1581093458791-9d42c6d4e9a1?w=700&q=80',
+    stat: 'AI Monitoring',
+  },
+  {
+    id: "operator-monitoring",
     tag: '👷 Operator Monitoring',
     title: 'Real-Time Operator Tracking',
     desc: 'Monitor operator presence in real time. Ensure attention and discipline on site. Detect unsafe behavior or absence instantly → Safer, more accountable operations.',
@@ -10,6 +20,7 @@ const products = [
     stat: 'Live Tracking',
   },
   {
+    id: "access-control",
     tag: '🚪 Smart Access Control',
     title: 'Automated Entry & Exit System',
     desc: 'Track every entry and exit automatically. Monitor vehicles and personnel movement. Maintain complete, auditable movement records → Secure and controlled site access.',
@@ -17,6 +28,7 @@ const products = [
     stat: 'Secure Access',
   },
   {
+    id: "monitoring",
     tag: '📊 Real-Time Monitoring',
     title: 'Centralized Live Operations View',
     desc: 'Live view of all operations, always on. Centralized monitoring from one interface. Easy-to-understand dashboards for any team → Full visibility at all times.',
@@ -24,6 +36,7 @@ const products = [
     stat: 'Live Dashboard',
   },
   {
+    id: "alerts",
     tag: '🔔 Smart Alerts & Safety',
     title: 'Instant Safety Alert System',
     desc: 'Instant alerts triggered for unsafe situations. Early warning system prevents incidents. Faster response, fewer escalations → Improved safety, faster response.',
@@ -31,6 +44,7 @@ const products = [
     stat: 'Instant Alerts',
   },
   {
+    id: "connectivity",
     tag: '📡 Connectivity Layer',
     title: 'Unified Site Communication',
     desc: 'Connect all devices, sensors, and systems into one network → seamless industrial coordination.',
@@ -38,6 +52,7 @@ const products = [
     stat: 'Connected',
   },
   {
+    id: "ai-engine",
     tag: '🧠 AI Decision Engine',
     title: 'Smart Operational Intelligence',
     desc: 'AI analyzes site data in real time to support faster and better decisions → reduced human delay.',
@@ -45,6 +60,7 @@ const products = [
     stat: 'AI Powered',
   },
   {
+    id: "automation",
     tag: '⚙️ Automation Core',
     title: 'Process Automation System',
     desc: 'Automate repetitive industrial workflows and reduce manual dependency → higher efficiency.',
@@ -52,6 +68,7 @@ const products = [
     stat: 'Auto Workflows',
   },
   {
+    id: "safety",
     tag: '🛡 Safety Intelligence',
     title: 'Predictive Risk Prevention',
     desc: 'Detect risks before they happen using predictive models → safer industrial environments.',
@@ -60,7 +77,9 @@ const products = [
   },
 ];
 
-export default function Products({ onSelectProduct }) {
+export default function Products() {
+  const navigate = useNavigate(); // ✅ added
+
   const scrollRef = useRef(null);
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
@@ -149,7 +168,7 @@ export default function Products({ onSelectProduct }) {
               <div
                 className="prod-card"
                 key={i}
-                onClick={() => onSelectProduct(p)}
+                onClick={() => navigate(`/product/${p.id}`)} // ✅ changed
               >
                 <div className="prod-img-wrap">
                   <img src={p.img} alt={p.title} />
