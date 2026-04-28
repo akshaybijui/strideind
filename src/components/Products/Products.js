@@ -3,67 +3,65 @@ import './Products.css';
 
 const products = [
   {
-    tag: '⚙️ Custom Branding',
-    title: 'Customized Branding',
-    desc: 'White-label the Futudrill platform with your company identity — from dashboards to reports for a seamless branded experience.',
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80',
-    stat: 'White-label Ready',
+    tag: '👷 Operator Monitoring',
+    title: 'Real-Time Operator Tracking',
+    desc: 'Monitor operator presence in real time. Ensure attention and discipline on site. Detect unsafe behavior or absence instantly → Safer, more accountable operations.',
+    img: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=700&q=80',
+    stat: 'Live Tracking',
   },
   {
-    tag: '🔌 Universal I/O',
-    title: 'Universal I/O Compatibility',
-    desc: 'Works with Modbus, HART, OPC-UA, CAN bus, and analog/digital systems — fully hardware-agnostic connectivity.',
-    img: 'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=700&q=80',
-    stat: 'Multi-Protocol',
+    tag: '🚪 Smart Access Control',
+    title: 'Automated Entry & Exit System',
+    desc: 'Track every entry and exit automatically. Monitor vehicles and personnel movement. Maintain complete, auditable movement records → Secure and controlled site access.',
+    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
+    stat: 'Secure Access',
   },
   {
-    tag: '🔗 Integration',
-    title: 'Seamless System Integration',
-    desc: 'Connect SCADA, ERP, and enterprise databases through open APIs and pre-built connectors with minimal disruption.',
+    tag: '📊 Real-Time Monitoring',
+    title: 'Centralized Live Operations View',
+    desc: 'Live view of all operations, always on. Centralized monitoring from one interface. Easy-to-understand dashboards for any team → Full visibility at all times.',
+    img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80',
+    stat: 'Live Dashboard',
+  },
+  {
+    tag: '🔔 Smart Alerts & Safety',
+    title: 'Instant Safety Alert System',
+    desc: 'Instant alerts triggered for unsafe situations. Early warning system prevents incidents. Faster response, fewer escalations → Improved safety, faster response.',
+    img: 'https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=700&q=80',
+    stat: 'Instant Alerts',
+  },
+  {
+    tag: '📡 Connectivity Layer',
+    title: 'Unified Site Communication',
+    desc: 'Connect all devices, sensors, and systems into one network → seamless industrial coordination.',
+    img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80',
+    stat: 'Connected',
+  },
+  {
+    tag: '🧠 AI Decision Engine',
+    title: 'Smart Operational Intelligence',
+    desc: 'AI analyzes site data in real time to support faster and better decisions → reduced human delay.',
     img: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=700&q=80',
-    stat: 'API Connected',
+    stat: 'AI Powered',
   },
   {
-    tag: '🧠 AI Intelligence',
-    title: 'Intelligent Alerts & Analytics',
-    desc: 'AI detects anomalies, triggers alerts, and provides predictive insights with trend analysis and reporting.',
-    img: 'https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700&q=80',
-    stat: 'Predictive AI',
-  },
-
-  {
-    tag: '🛡 Reliability',
-    title: 'Field-Proven Reliability',
-    desc: 'Built for extreme temperatures, vibration, and harsh drilling environments with ATEX & IECEx compliance.',
-    img: 'https://images.unsplash.com/photo-1581091870627-3e0f1f2a6c6d?w=700&q=80',
-    stat: 'Industrial Grade',
+    tag: '⚙️ Automation Core',
+    title: 'Process Automation System',
+    desc: 'Automate repetitive industrial workflows and reduce manual dependency → higher efficiency.',
+    img: 'https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=700&q=80',
+    stat: 'Auto Workflows',
   },
   {
-    tag: '🚀 Deployment',
-    title: 'Rapid Deployment',
-    desc: 'Plug-and-play setup enables full site activation in hours, not weeks — reducing commissioning delays.',
-    img: 'https://images.unsplash.com/photo-1581091215367-59ab6b2d6d5a?w=700&q=80',
-    stat: 'Fast Setup',
-  },
-  {
-    tag: '🔐 Security',
-    title: 'Enterprise-Grade Security',
-    desc: 'End-to-end encryption, role-based access control, and ISO 27001 compliance for secure operations.',
-    img: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=700&q=80',
-    stat: 'ISO Certified',
-  },
-  {
-    tag: '📞 Support',
-    title: 'Dedicated Support',
-    desc: '24/7 expert engineering support from installation to optimization ensuring maximum system performance.',
-    img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80',
-    stat: '24/7 Assistance',
+    tag: '🛡 Safety Intelligence',
+    title: 'Predictive Risk Prevention',
+    desc: 'Detect risks before they happen using predictive models → safer industrial environments.',
+    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
+    stat: 'Risk Prevention',
   },
 ];
 
 export default function Products({ onSelectProduct }) {
   const scrollRef = useRef(null);
-
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
 
@@ -100,35 +98,48 @@ export default function Products({ onSelectProduct }) {
   }, []);
 
   const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    scrollRef.current.scrollBy({
+      left: -300,
+      behavior: 'smooth',
+    });
   };
 
   const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    scrollRef.current.scrollBy({
+      left: 300,
+      behavior: 'smooth',
+    });
   };
 
   return (
     <section className="products section" id="products">
       <div className="container">
-        <div className="section-label">Advanced Capabilities</div>
+        <div className="section-label">
+          Everything You Need to Run
+        </div>
 
         <div className="prod-header">
           <h2 className="section-title">
-            Engineered for Your <br />
-            <span className="teal">Operation</span>
+            Smarter Drilling Operations <br />
+            <span className="teal">Platform</span>
           </h2>
         </div>
 
         <div className="prod-scroll">
-
           {showLeft && (
-            <button className="scroll-btn left" onClick={scrollLeft}>
+            <button
+              className="scroll-btn left"
+              onClick={scrollLeft}
+            >
               ←
             </button>
           )}
 
           {showRight && (
-            <button className="scroll-btn right" onClick={scrollRight}>
+            <button
+              className="scroll-btn right"
+              onClick={scrollRight}
+            >
               →
             </button>
           )}
@@ -152,13 +163,13 @@ export default function Products({ onSelectProduct }) {
                   <p className="prod-desc">{p.desc}</p>
 
                   <button className="btn-outline">
-                    Learn More <span className="arrow">→</span>
+                    Learn More
+                    <span className="arrow">→</span>
                   </button>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

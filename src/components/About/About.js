@@ -3,31 +3,58 @@ import './About.css';
 
 export default function About() {
   const pillars = [
-    { num: '01', title: 'Drilling Instrumentation', desc: 'Precision-grade sensors and downhole tools deliver accurate measurements of weight-on-bit, torque, rotary speed, and formation data.' },
-    { num: '02', title: 'Fuel & Energy Monitoring', desc: 'Gain full visibility into fuel consumption across rigs, generators, and equipment with real-time efficiency insights and ESG support.' },
-    { num: '03', title: 'Real-Time Remote Monitoring', desc: 'Monitor drilling operations from anywhere with ultra-low latency cloud dashboards, alerts, and historical analytics.' },
+    {
+      num: '👁',
+      title: 'AI Vision',
+      desc: 'Real-time scene understanding across your entire site',
+    },
+    {
+      num: '⚡',
+      title: 'Automation',
+      desc: 'Automated alerts and responses, zero manual lag',
+    },
+    {
+      num: '📡',
+      title: 'Live Data',
+      desc: 'Centralized dashboards with real-time feeds',
+    },
+    {
+      num: '🛡',
+      title: 'Safety-First',
+      desc: 'Engineered for high-risk industrial environments only',
+    },
   ];
 
   return (
     <section className="about section" id="about">
       <div className="container">
         <div className="about-layout">
+          
           <div className="about-left">
-            <div className="section-label">Core Solutions</div>
+            <div className="section-label">Who We Are</div>
+
             <h2 className="section-title">
-              Built for the Field.<br />
-              <span className="teal">Powered by Data.</span>
+              Intelligent Industrial<br />
+              <span className="teal">Solutions</span>
             </h2>
 
             <p className="about-text">
-              Futudrill transforms complex drilling operations into streamlined, data-driven workflows — from downhole instrumentation to cloud-connected dashboards accessible from anywhere on Earth.
+              Strideind Innovations Private Limited delivers intelligent industrial
+              solutions designed to improve safety, efficiency, and operational
+              control. We specialize in combining AI-powered vision systems and
+              automation to help industries move towards smarter and more reliable
+              operations.
             </p>
+
             <p className="about-text">
-              Designed for modern oil & gas environments, our solutions improve visibility, efficiency, and control across every stage of drilling operations.
+              Our flagship platform, FutuDrill, is built specifically for modern
+              drilling environments — combining AI-based camera systems with
+              intelligent analytics to enable systems that don't just see, but
+              understand and respond.
             </p>
 
             <a href="#contact" className="btn-primary">
-              Request a Demo
+              Work With Us
             </a>
           </div>
 
@@ -38,16 +65,20 @@ export default function About() {
                 src={process.env.PUBLIC_URL + "/oil.png"}
                 alt="Industrial facility"
               />
+
               <div className="about-img-badge">
-                <span className="badge-num">24/7</span>
-                <span className="badge-txt">Remote<br/>Monitoring</span>
+                <span className="badge-num">15+</span>
+                <span className="badge-txt">
+                  Years of<br />Excellence
+                </span>
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="pillars">
-          {pillars.map(p => (
+          {pillars.map((p) => (
             <div className="pillar" key={p.num}>
               <span className="pillar-num">{p.num}</span>
               <h4 className="pillar-title">{p.title}</h4>
@@ -55,6 +86,7 @@ export default function About() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

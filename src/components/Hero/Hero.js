@@ -4,24 +4,28 @@ import './Hero.css';
 export default function Hero() {
   return (
     <section className="hero" id="home">
+      
       {/* Grid background */}
       <div className="hero-grid" />
       <div className="hero-gradient" />
 
       <div className="hero-content">
+        
         <div className="hero-badge">
           <span className="badge-dot" />
           ⬡ FutuDrill Platform
         </div>
 
         <h1 className="hero-title">
-          OIL & GAS TECHNOLOGY<br />
-          <span className="teal">DRILL SMARTER.</span><br />
-          OPERATE FURTHER.
+          AI-Powered<br />
+          <span className="teal">Drilling Intelligence</span><br />
+          Transformation.
         </h1>
 
         <p className="hero-sub">
-          Futudrill delivers cutting-edge drilling instrumentation and real time remote monitoring solutions — giving oil & gas operators unprecedented visibility, control, and efficiency across every well site.
+          Transform your drilling operations with smart monitoring, real-time visibility,
+          <br />
+          and intelligent safety systems.
         </p>
 
         <p className="hero-sub">
@@ -29,28 +33,37 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#contact" className="btn-primary">REQUEST A DEMO</a>
+          <a href="#contact" className="btn-primary">
+            Request Demo
+          </a>
+
           <a href="#contact" className="btn-ghost">
-            EXPLORE SOLUTIONS <span className="arrow">→</span>
+            Contact Us
+            <span className="arrow">→</span>
           </a>
         </div>
 
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-num">500+</span>
-            <span className="stat-label">Well Sites Monitored</span>
+            <span className="stat-num">24/7</span>
+            <span className="stat-label">Live Monitoring</span>
           </div>
+
           <div className="stat-divider" />
+
           <div className="stat">
-            <span className="stat-num">30%</span>
-            <span className="stat-label">Avg. Fuel Savings</span>
+            <span className="stat-num">AI</span>
+            <span className="stat-label">Vision Systems</span>
           </div>
+
           <div className="stat-divider" />
+
           <div className="stat">
-            <span className="stat-num">99.7%</span>
-            <span className="stat-label">24/7 Remote Monitoring</span>
+            <span className="stat-num">0ms</span>
+            <span className="stat-label">Alert Delay</span>
           </div>
         </div>
+
       </div>
 
       <div className="hero-image">
@@ -66,6 +79,7 @@ export default function Hero() {
       <div className="hero-scroll">
         <div className="scroll-line" />
       </div>
+
     </section>
   );
 }
