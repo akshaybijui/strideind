@@ -21,7 +21,7 @@
 
 /* Left side */
 .contact-left {
-  max-width: 600px; /* match hero */
+  max-width: 600px;
 }
 
 .contact-sub {
@@ -78,6 +78,8 @@
   font-size: 14px;
   font-weight: 300;
   color: var(--white-80);
+  line-height: 1.6;
+  word-break: break-word;
 }
 
 /* Form */
@@ -199,17 +201,60 @@
   color: var(--white-50);
 }
 
-/* ---------------- RESPONSIVE ---------------- */
-
+/* ---------------- TABLET (NO CHANGE) ---------------- */
 @media (max-width: 1024px) {
-  .contact-left {
-    max-width: 500px;
+  .contact .container {
+    margin-left: 5%;
+    margin-right: 0;
+    padding-right: 20px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
   }
 }
 
-@media (max-width: 900px) {
+/* ---------------- SMALL DEVICES ONLY (STACK HERE) ---------------- */
+@media (max-width: 600px) {
   .contact .container {
     margin: 0;
+    padding: 0 20px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-left {
+    text-align: center;
+  }
+
+  .contact-sub {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 28px 20px;
+    max-width: 100%;
+  }
+
+  .success-msg {
+    max-width: 100%;
+  }
+}
+/* ---------------- TABLET FIX (768px ISSUE) ---------------- */
+@media (max-width: 768px) {
+  .contact .container {
+    margin-left: 0;
+    margin-right: 0;
     padding: 0 20px;
   }
 
@@ -226,18 +271,10 @@
   .contact-sub {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-form {
-    padding: 28px 20px;
     max-width: 100%;
   }
 
-  .success-msg {
+  .contact-form {
     max-width: 100%;
   }
 }

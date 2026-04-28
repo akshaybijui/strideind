@@ -3,9 +3,9 @@ import './About.css';
 
 export default function About() {
   const pillars = [
-    { num: '01', title: 'Precision Engineering', desc: 'Every solution designed to exact tolerance — no shortcuts, no compromise.' },
-    { num: '02', title: 'Agile Delivery', desc: 'Fast-moving teams with the structure to deliver on time and on budget.' },
-    { num: '03', title: 'Long-Term Partnership', desc: 'We don\'t just complete projects — we stay invested in your growth.' },
+    { num: '01', title: 'Drilling Instrumentation', desc: 'Precision-grade sensors and downhole tools deliver accurate measurements of weight-on-bit, torque, rotary speed, and formation data.' },
+    { num: '02', title: 'Fuel & Energy Monitoring', desc: 'Gain full visibility into fuel consumption across rigs, generators, and equipment with real-time efficiency insights and ESG support.' },
+    { num: '03', title: 'Real-Time Remote Monitoring', desc: 'Monitor drilling operations from anywhere with ultra-low latency cloud dashboards, alerts, and historical analytics.' },
   ];
 
   return (
@@ -13,34 +13,34 @@ export default function About() {
       <div className="container">
         <div className="about-layout">
           <div className="about-left">
-            <div className="section-label">Who We Are</div>
+            <div className="section-label">Core Solutions</div>
             <h2 className="section-title">
-              Driving Industry<br />
-              <span className="teal">Forward</span>
+              Built for the Field.<br />
+              <span className="teal">Powered by Data.</span>
             </h2>
 
             <p className="about-text">
-              Strideind is an industrial solutions company built on a foundation of engineering excellence and operational precision. We partner with manufacturers, distributors and industrial operators to deliver systems and services that create measurable impact.
+              Futudrill transforms complex drilling operations into streamlined, data-driven workflows — from downhole instrumentation to cloud-connected dashboards accessible from anywhere on Earth.
             </p>
             <p className="about-text">
-              With deep expertise across automation, supply chain and process engineering, our teams bring the technical rigour and commercial mindset to solve complex challenges — and keep solving them as your business evolves.
+              Designed for modern oil & gas environments, our solutions improve visibility, efficiency, and control across every stage of drilling operations.
             </p>
 
             <a href="#contact" className="btn-primary">
-  Work With Us
-</a>
+              Request a Demo
+            </a>
           </div>
 
           <div className="about-right">
             <div className="about-img-wrap">
               {/* Replace with real image */}
               <img
-                 src={process.env.PUBLIC_URL + "/oil.png"}
+                src={process.env.PUBLIC_URL + "/oil.png"}
                 alt="Industrial facility"
               />
               <div className="about-img-badge">
-                <span className="badge-num">15+</span>
-                <span className="badge-txt">Years of<br/>Excellence</span>
+                <span className="badge-num">24/7</span>
+                <span className="badge-txt">Remote<br/>Monitoring</span>
               </div>
             </div>
           </div>

@@ -85,6 +85,18 @@
 }
 
 /* Pillars */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px; /* space between cards */
+
+  margin-top: 32px;
+
+  max-width: none;   /* 🔥 remove restriction */
+  width: 100%;       /* 🔥 stretch full */
+}
+/* Pillar card */
 .pillar {
   background: var(--black);
   padding: 36px 32px;
@@ -93,6 +105,8 @@
   gap: 10px;
   border-top: 2px solid transparent;
   cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
+  width: 100%;
 
   /* ✅ smoother animation */
   transition: 
@@ -102,7 +116,7 @@
     background 0.25s ease;
 }
 
-/* ✅ SMOOTH HOVER (lift + scale + depth) */
+/* ✅ HOVER (smooth lift + depth) */
 .pillar:hover {
   border-color: var(--teal);
   background: var(--dark);
@@ -114,7 +128,7 @@
     0 20px 40px rgba(0,0,0,0.35);
 }
 
-/* ✅ CLICK FEEL (soft press) */
+/* ✅ CLICK (soft press) */
 .pillar:active {
   transform: translateY(-4px) scale(0.99);
   box-shadow: 0 8px 16px rgba(0,0,0,0.25);

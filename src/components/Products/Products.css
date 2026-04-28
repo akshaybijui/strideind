@@ -74,48 +74,14 @@
   overflow: hidden;
 }
 
-/* ✅ LEFT FADE */
-.prod-scroll::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 120px;
-  z-index: 5;
-  pointer-events: none;
-  background: linear-gradient(
-    to right,
-    var(--black),
-    rgba(10, 10, 10, 0.6),
-    transparent
-  );
-}
 
-/* ✅ RIGHT FADE */
-.prod-scroll::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 120px;
-  z-index: 5;
-  pointer-events: none;
-  background: linear-gradient(
-    to left,
-    var(--black),
-    rgba(10, 10, 10, 0.6),
-    transparent
-  );
-}
 
 /* Grid (horizontal scroll) */
 .prod-grid {
   display: flex;
   gap: 24px;
   overflow-x: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   padding-bottom: 10px;
 }
 
@@ -134,6 +100,10 @@
   max-width: 300px;
   background: var(--dark2);
   border: 1px solid var(--white-10);
+
+  display: flex;              /* ✅ important */
+  flex-direction: column;     /* ✅ important */
+
   transition: transform 0.25s ease, border 0.25s ease;
 }
 
@@ -187,8 +157,15 @@
 /* Body */
 .prod-body {
   padding: 20px;
-}
 
+  display: flex;              /* ✅ important */
+  flex-direction: column;     /* ✅ important */
+  flex: 1;                    /* ✅ fill space */
+}
+.prod-body .btn-outline {
+  margin-top: auto;           /* ✅ magic line */
+  align-self: flex-start;     /* keep left aligned */
+}
 .prod-title {
   font-size: 18px;
   font-weight: 700;
@@ -240,7 +217,34 @@
     width: 60px;
   }
 }
+/* Scroll arrows */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--white-20);
+  background: rgba(0,0,0,0.6);
+  color: var(--white);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+}
 
+.scroll-btn:hover {
+  background: var(--teal);
+  color: var(--black);
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
 @media (max-width: 480px) {
   .prod-card {
     min-width: 260px;

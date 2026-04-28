@@ -123,7 +123,7 @@ export default function StrideAI() {
         <div className="chat-header">
           <div className="chat-header-left">
             <div className="chat-avatar">
-              <img src="/logo.png" alt="StrideAI" />
+              <img src={process.env.PUBLIC_URL + "/logo.png"}></img>
             </div>
             <div>
               <div className="chat-name">StrideAI</div>
