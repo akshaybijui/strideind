@@ -5,7 +5,7 @@ import './Navbar.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // ✅ for mobile
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,7 +16,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ✅ PRODUCTS LIST (same IDs as Products page)
+  // ✅ Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setDropdownOpen(false);
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [dropdownOpen]);
+
   const productLinks = [
     { id: "futudrill", name: "Futudrill" },
     { id: "operator-monitoring", name: "Operator Monitoring" },
@@ -29,21 +43,14 @@ export default function Navbar() {
     { id: "safety", name: "Safety" },
   ];
 
-  const handleClick = (e, link) => {
+  const handleScrollNav = (section) => {
     setMenuOpen(false);
 
-    if (location.pathname === "/" || location.pathname === "/strideind") {
-      return;
-    }
-
-    e.preventDefault();
-    navigate("/", { state: { scrollTo: link.toLowerCase() } });
-  };
-
-  const handleLogoClick = (e) => {
     if (location.pathname !== "/" && location.pathname !== "/strideind") {
-      e.preventDefault();
-      navigate("/", { state: { scrollTo: "home" } });
+      navigate("/", { state: { scrollTo: section } });
+    } else {
+      const el = document.getElementById(section);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -52,68 +59,80 @@ export default function Navbar() {
       <div className="nav-inner">
 
         {/* LOGO */}
-        <a href="#home" className="nav-logo" onClick={handleLogoClick}>
+        <div
+          className="nav-logo"
+          onClick={() => {
+            navigate("/");
+            setMenuOpen(false);
+          }}
+        >
           <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Strideind" />
-        </a>
+        </div>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
 
-          {/* ABOUT */}
           <li>
-            <a href="#about" onClick={(e) => handleClick(e, "About")}>
+            <button onClick={() => handleScrollNav("about")}>
               About
-            </a>
+            </button>
           </li>
 
-          {/* ✅ PRODUCTS DROPDOWN */}
-          <li
-            className="dropdown"
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-          >
-            <span className="dropdown-title">
-              Products ▾
-            </span>
+          {/* ✅ DROPDOWN (CLICK ONLY) */}
+          <li className="dropdown">
 
-            <div className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
+            <button
+              className="dropdown-title"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setDropdownOpen(prev => !prev);
+              }}
+            >
+              Products ▾
+            </button>
+
+            <div
+              className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}
+              onClick={(e) => e.stopPropagation()}
+            >
               {productLinks.map((p) => (
                 <div
                   key={p.id}
                   className="dropdown-item"
                   onClick={() => {
+                    navigate(`/product/${p.id}`);
                     setMenuOpen(false);
                     setDropdownOpen(false);
-                    navigate(`/product/${p.id}`);
                   }}
                 >
                   {p.name}
                 </div>
               ))}
             </div>
+
           </li>
 
-          {/* CONTACT */}
           <li>
-            <a href="#contact" onClick={(e) => handleClick(e, "Contact")}>
+            <button onClick={() => handleScrollNav("contact")}>
               Contact
-            </a>
+            </button>
           </li>
 
           <li>
-            <a
-              href="#contact"
+            <button
               className="nav-cta"
-              onClick={(e) => handleClick(e, "Contact")}
+              onClick={() => handleScrollNav("contact")}
             >
               Get in Touch
-            </a>
+            </button>
           </li>
+
         </ul>
 
         {/* HAMBURGER */}
         <button
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
         >
           <span className={menuOpen ? 'open' : ''} />
           <span className={menuOpen ? 'open' : ''} />
