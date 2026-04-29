@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/strideind/static/css/main.438550af.css",
-    "main.js": "/strideind/static/js/main.cd3068ab.js",
+    "main.css": "/strideind/static/css/main.f4480df5.css",
+    "main.js": "/strideind/static/js/main.6e1aa989.js",
     "index.html": "/strideind/index.html",
-    "main.438550af.css.map": "/strideind/static/css/main.438550af.css.map",
-    "main.cd3068ab.js.map": "/strideind/static/js/main.cd3068ab.js.map"
+    "main.f4480df5.css.map": "/strideind/static/css/main.f4480df5.css.map",
+    "main.6e1aa989.js.map": "/strideind/static/js/main.6e1aa989.js.map"
   },
   "entrypoints": [
-    "static/css/main.438550af.css",
-    "static/js/main.cd3068ab.js"
+    "static/css/main.f4480df5.css",
+    "static/js/main.6e1aa989.js"
   ]
 }
