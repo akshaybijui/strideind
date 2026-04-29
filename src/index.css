@@ -1,3 +1,6 @@
+/* ✅ IMPORT FONT (REQUIRED) */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +22,8 @@
   --white-50: rgba(255, 255, 255, 0.5);
   --white-20: rgba(255, 255, 255, 0.2);
   --white-10: rgba(255, 255, 255, 0.08);
+
+  /* ✅ FONT VARIABLE */
   --font: 'Manrope', sans-serif;
 }
 
@@ -38,7 +43,13 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: var(--teal-dark); border-radius: 2px; }
+::-webkit-scrollbar-thumb { 
+  background: var(--teal-dark); 
+  border-radius: 2px; 
+}
 
 /* Selection */
-::selection { background: var(--teal); color: var(--black); }
+::selection { 
+  background: var(--teal); 
+  color: var(--black); 
+}

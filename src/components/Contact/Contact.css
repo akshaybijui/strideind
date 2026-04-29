@@ -72,6 +72,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 3px;
+  text-align: start;
 }
 
 .info-val {
@@ -80,6 +81,7 @@
   color: var(--white-80);
   line-height: 1.6;
   word-break: break-word;
+  text-align: start;
 }
 
 /* Form */

@@ -8,7 +8,7 @@ const products = [
     tag: '🚀 Futudrill',
     title: 'Futudrill Smart Drilling Platform',
     desc: 'Advanced drilling instrumentation and real-time monitoring system.',
-    img: 'https://images.unsplash.com/photo-1581093458791-9d42c6d4e9a1?w=700&q=80',
+    img: 'futu.jpg',
     stat: 'AI Monitoring',
   },
   {

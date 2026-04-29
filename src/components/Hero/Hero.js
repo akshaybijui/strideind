@@ -67,11 +67,11 @@ export default function Hero() {
       </div>
 
       {/* ✅ Full Video Background */}
-<div className="hero-video">
+{ <div className="hero-video">
   <video autoPlay muted loop playsInline>
-    <source src={process.env.PUBLIC_URL + "/sample-3.mp4"} type="video/mp4" />
+    <source src={process.env.PUBLIC_URL + "/oilrig.mp4"} type="video/mp4" />
   </video>
-</div>
+</div> }
 
       <div className="hero-scroll">
         <div className="scroll-line" />

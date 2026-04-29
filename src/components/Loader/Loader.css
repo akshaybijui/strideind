@@ -35,59 +35,66 @@
 /* Top */
 .top {
   height: 4px;
-  width: 0;
+  width: 100%;
   top: 0;
   left: 0;
-  animation: drawTop 0.5s linear infinite;
+  transform-origin: left;
+  animation: moveTop 2s linear infinite;
 }
 
 /* Right */
 .right {
   width: 4px;
-  height: 0;
+  height: 100%;
   top: 0;
   right: 0;
-  animation: drawRight 0.5s linear infinite;
-  animation-delay: 0.5s;
+  transform-origin: top;
+  animation: moveRight 2s linear infinite;
 }
 
 /* Bottom */
 .bottom {
   height: 4px;
-  width: 0;
+  width: 100%;
   bottom: 0;
   right: 0;
-  animation: drawBottom 0.5s linear infinite;
-  animation-delay: 1s;
+  transform-origin: right;
+  animation: moveBottom 2s linear infinite;
 }
 
 /* Left */
 .left {
   width: 4px;
-  height: 0;
+  height: 100%;
   bottom: 0;
   left: 0;
-  animation: drawLeft 0.5s linear infinite;
-  animation-delay: 1.5s;
+  transform-origin: bottom;
+  animation: moveLeft 2s linear infinite;
 }
 
-/* Animations */
-@keyframes drawTop {
-  from { width: 0; }
-  to { width: 100%; }
+/* Smooth loop animations */
+@keyframes moveTop {
+  0% { transform: scaleX(0); }
+  25% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
 }
 
-@keyframes drawRight {
-  from { height: 0; }
-  to { height: 100%; }
+@keyframes moveRight {
+  0% { transform: scaleY(0); }
+  25% { transform: scaleY(0); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(1); }
 }
 
-@keyframes drawBottom {
-  from { width: 0; }
-  to { width: 100%; }
+@keyframes moveBottom {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0); }
+  75% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
 }
 
-@keyframes drawLeft {
-  from { height: 0; }
-  to { height: 100%; }
+@keyframes moveLeft {
+  0% { transform: scaleY(0); }
+  75% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
 }

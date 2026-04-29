@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* BOTTOM */}
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Your Company. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Strideind. All rights reserved.</p>
           <p className="footer-credit">Crafted with precision</p>
         </div>
 
