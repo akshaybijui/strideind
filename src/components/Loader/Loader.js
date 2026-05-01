@@ -6,14 +6,18 @@ export default function Loader() {
     <div className="loader-wrapper">
       <div className="loader-box">
 
-        {/* Your logo */}
-        <img src={process.env.PUBLIC_URL + "/loader.png"} alt="logo" className="logo-img" />
+        {/* Logo */}
+        <img
+          src={process.env.PUBLIC_URL + "/loader.png"}
+          alt="logo"
+          className="loader-logo"
+        />
 
-        {/* Animated rectangle */}
-        <div className="border-line top"></div>
-        <div className="border-line right"></div>
-        <div className="border-line bottom"></div>
-        <div className="border-line left"></div>
+        {/* Animated border */}
+        <div className="border-line loader-top"></div>
+        <div className="border-line loader-right"></div>
+        <div className="border-line loader-bottom"></div>
+        <div className="border-line loader-left"></div>
 
       </div>
     </div>

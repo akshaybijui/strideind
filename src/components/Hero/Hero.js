@@ -13,7 +13,7 @@ export default function Hero() {
         
         <div className="hero-badge">
           <span className="badge-dot" />
-          ⬡ FutuDrill Platform
+           FutuDrill Platform
         </div>
 
         <h1 className="hero-title">
@@ -69,7 +69,7 @@ export default function Hero() {
       {/* ✅ Full Video Background */}
 { <div className="hero-video">
   <video autoPlay muted loop playsInline>
-    <source src={process.env.PUBLIC_URL + "/oilrig.mp4"} type="video/mp4" />
+    <source src={process.env.PUBLIC_URL + "/bgoil.mp4"} type="video/mp4" />
   </video>
 </div> }
 

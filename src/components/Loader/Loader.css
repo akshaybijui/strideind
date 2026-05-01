@@ -18,7 +18,7 @@
 }
 
 /* Logo center */
-.logo-img {
+.loader-logo {
   width: 70px;
   position: absolute;
   top: 50%;
@@ -26,74 +26,77 @@
   transform: translate(-50%, -50%);
 }
 
-/* Border lines */
+/* Border base */
 .border-line {
   position: absolute;
   background: white;
 }
 
+/* ===== UNIQUE CLASS NAMES (FIXED) ===== */
+
 /* Top */
-.top {
+.loader-top {
   height: 4px;
   width: 100%;
   top: 0;
   left: 0;
   transform-origin: left;
-  animation: moveTop 2s linear infinite;
+  animation: loaderMoveTop 2s linear infinite;
 }
 
 /* Right */
-.right {
+.loader-right {
   width: 4px;
   height: 100%;
   top: 0;
   right: 0;
   transform-origin: top;
-  animation: moveRight 2s linear infinite;
+  animation: loaderMoveRight 2s linear infinite;
 }
 
 /* Bottom */
-.bottom {
+.loader-bottom {
   height: 4px;
   width: 100%;
   bottom: 0;
   right: 0;
   transform-origin: right;
-  animation: moveBottom 2s linear infinite;
+  animation: loaderMoveBottom 2s linear infinite;
 }
 
 /* Left */
-.left {
+.loader-left {
   width: 4px;
   height: 100%;
   bottom: 0;
   left: 0;
   transform-origin: bottom;
-  animation: moveLeft 2s linear infinite;
+  animation: loaderMoveLeft 2s linear infinite;
 }
 
-/* Smooth loop animations */
-@keyframes moveTop {
+/* ===== ANIMATIONS ===== */
+
+@keyframes loaderMoveTop {
   0% { transform: scaleX(0); }
   25% { transform: scaleX(1); }
   100% { transform: scaleX(1); }
 }
 
-@keyframes moveRight {
+@keyframes loaderMoveRight {
   0% { transform: scaleY(0); }
   25% { transform: scaleY(0); }
   50% { transform: scaleY(1); }
   100% { transform: scaleY(1); }
 }
 
-@keyframes moveBottom {
+@keyframes loaderMoveBottom {
   0% { transform: scaleX(0); }
   50% { transform: scaleX(0); }
   75% { transform: scaleX(1); }
   100% { transform: scaleX(1); }
 }
 
-@keyframes moveLeft {
+@keyframes loaderMoveLeft {
   0% { transform: scaleY(0); }
   75% { transform: scaleY(0); }
   100% { transform: scaleY(1); }

@@ -5,15 +5,15 @@ import './Products.css';
 const products = [
   {
     id: "futudrill", // ✅ added
-    tag: '🚀 Futudrill',
+    tag: 'Futudrill',
     title: 'Futudrill Smart Drilling Platform',
     desc: 'Advanced drilling instrumentation and real-time monitoring system.',
-    img: 'futu.jpg',
+    img: process.env.PUBLIC_URL + '/moni.jpeg',
     stat: 'AI Monitoring',
   },
   {
     id: "operator-monitoring",
-    tag: '👷 Operator Monitoring',
+    tag: ' Operator Monitoring',
     title: 'Real-Time Operator Tracking',
     desc: 'Monitor operator presence in real time. Ensure attention and discipline on site. Detect unsafe behavior or absence instantly → Safer, more accountable operations.',
     img: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=700&q=80',
@@ -21,7 +21,7 @@ const products = [
   },
   {
     id: "access-control",
-    tag: '🚪 Smart Access Control',
+    tag: 'Smart Access Control',
     title: 'Automated Entry & Exit System',
     desc: 'Track every entry and exit automatically. Monitor vehicles and personnel movement. Maintain complete, auditable movement records → Secure and controlled site access.',
     img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
@@ -29,7 +29,7 @@ const products = [
   },
   {
     id: "monitoring",
-    tag: '📊 Real-Time Monitoring',
+    tag: 'Real-Time Monitoring',
     title: 'Centralized Live Operations View',
     desc: 'Live view of all operations, always on. Centralized monitoring from one interface. Easy-to-understand dashboards for any team → Full visibility at all times.',
     img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80',
@@ -37,7 +37,7 @@ const products = [
   },
   {
     id: "alerts",
-    tag: '🔔 Smart Alerts & Safety',
+    tag: 'Smart Alerts & Safety',
     title: 'Instant Safety Alert System',
     desc: 'Instant alerts triggered for unsafe situations. Early warning system prevents incidents. Faster response, fewer escalations → Improved safety, faster response.',
     img: 'https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=700&q=80',
@@ -45,7 +45,7 @@ const products = [
   },
   {
     id: "connectivity",
-    tag: '📡 Connectivity Layer',
+    tag: 'Connectivity Layer',
     title: 'Unified Site Communication',
     desc: 'Connect all devices, sensors, and systems into one network → seamless industrial coordination.',
     img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80',
@@ -53,7 +53,7 @@ const products = [
   },
   {
     id: "ai-engine",
-    tag: '🧠 AI Decision Engine',
+    tag: 'AI Decision Engine',
     title: 'Smart Operational Intelligence',
     desc: 'AI analyzes site data in real time to support faster and better decisions → reduced human delay.',
     img: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=700&q=80',
@@ -61,7 +61,7 @@ const products = [
   },
   {
     id: "automation",
-    tag: '⚙️ Automation Core',
+    tag: 'Automation Core',
     title: 'Process Automation System',
     desc: 'Automate repetitive industrial workflows and reduce manual dependency → higher efficiency.',
     img: 'https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=700&q=80',
@@ -69,7 +69,7 @@ const products = [
   },
   {
     id: "safety",
-    tag: '🛡 Safety Intelligence',
+    tag: 'Safety Intelligence',
     title: 'Predictive Risk Prevention',
     desc: 'Detect risks before they happen using predictive models → safer industrial environments.',
     img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',

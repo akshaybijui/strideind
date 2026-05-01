@@ -36,8 +36,6 @@
   padding: 0 20px;
 }
 
-/* ---------------- NO CHANGE BELOW ---------------- */
-
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -68,7 +66,7 @@
 }
 
 .hero-title {
-  font-size: clamp(42px, 6vw, 60px);
+  font-size: clamp(38px, 6vw, 60px);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -79,7 +77,6 @@
 .hero-title .teal {
   color: var(--teal);
 }
-
 
 .hero-sub {
   font-size: 16px;
@@ -131,27 +128,37 @@
   border-radius: 2px;
   transition: all 0.25s ease;
 }
+
 .btn-ghost .arrow {
   display: inline-block;
   transition: transform 0.3s ease;
 }
+
 .btn-ghost:hover {
   border-color: var(--teal);
   color: var(--teal);
 }
+
 .btn-ghost:hover .arrow {
   transform: translateX(6px);
 }
+
 .hero-stats {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
+/* ✨ UPDATED STAT HOVER */
 .stat {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-6px);
 }
 
 .stat-num {
@@ -159,6 +166,7 @@
   font-weight: 800;
   color: var(--white);
   letter-spacing: -0.02em;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .stat-label {
@@ -167,6 +175,17 @@
   color: var(--white-50);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.stat:hover .stat-num {
+  color: var(--teal);
+  transform: scale(1.08);
+}
+
+.stat:hover .stat-label {
+  color: var(--white);
+  opacity: 1;
 }
 
 .stat-divider {
@@ -187,7 +206,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-} 
+}
 
 /* 🌑 Dark overlay for readability */
 .hero-video::after {
@@ -200,7 +219,8 @@
     rgba(10,10,10,0.7) 40%,
     rgba(10,10,10,0.5) 100%
   );
-} 
+}
+
 .hero-video {
   position: absolute;
   width: 100%;
@@ -213,6 +233,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 /* Scroll indicator stays same */
 .hero-scroll {
   position: absolute;
@@ -220,7 +241,6 @@
   left: 50%;
   transform: translateX(-50%);
 }
-
 
 @media (max-width: 1024px) {
   .hero-content {
@@ -242,27 +262,27 @@
     width: 100%;
     margin: 0;
     padding: 0 20px;
-    text-align: center;
-    align-items: center;
+    text-align: start;
+    align-items: start;
   }
 
   .hero-image {
-    position: relative; /* 🔥 key fix */
+    position: relative;
     width: 100%;
     height: 280px;
     margin-top: 40px;
   }
 
   .hero-sub {
-    text-align: center;
+    text-align: start;
   }
 
   .hero-actions {
-    justify-content: center;
+    justify-content: start;
   }
 
   .hero-stats {
-    justify-content: center;
+    justify-content: start;
   }
 }
 
@@ -270,7 +290,7 @@
 @media (max-width: 480px) {
   .hero-stats {
     flex-direction: column;
-    align-items: center;
+    align-items: left;
   }
 
   .stat-divider {
