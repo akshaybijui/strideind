@@ -9,7 +9,7 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import StrideAI from './components/StrideAI/StrideAI';
-import Loader from './components/Loader/Loader'; // ✅ import loader
+import Loader from './components/Loader/Loader';
 
 // ✅ Home page
 function Home() {
@@ -31,7 +31,7 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // ⏱️ loader duration (change if needed)
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -42,12 +42,11 @@ export default function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/strideind"> {/* ✅ IMPORTANT FIX */}
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/strideind" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </Router>
